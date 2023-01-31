@@ -1,0 +1,113 @@
+{
+  "smileSampleId": "b1c462ea-a5b2-424d-abe8-e4ef21462afc",
+  "smilePatientId": "424cc849-2808-48c8-b9f1-8f92b6719409",
+  "primaryId": "05791_AQ_4",
+  "cmoPatientId": "C-CJKRKM",
+  "cmoSampleName": "C-CJKRKM-N001-d01",
+  "sampleName": "TIL-JE-04_N2",
+  "cmoInfoIgoId": "05791_AQ_4",
+  "investigatorSampleId": "TIL-JE-04_N2",
+  "importDate": "2022-12-27",
+  "sampleType": "Normal",
+  "oncotreeCode": null,
+  "collectionYear": "",
+  "tubeId": "",
+  "cfDNA2dBarcode": null,
+  "species": "Human",
+  "sex": "M",
+  "tumorOrNormal": "Normal",
+  "preservation": "DMSO-ViablyFrozen",
+  "sampleClass": "Blood",
+  "sampleOrigin": "Viably Frozen Cells",
+  "tissueLocation": "",
+  "genePanel": "WholeExomeSequencing",
+  "baitSet": "IDT_Exome_v2_FP_BAITS",
+  "datasource": "igo",
+  "igoComplete": true,
+  "cmoSampleIdFields": {
+    "naToExtract": "",
+    "normalizedPatientId": "MRN_REDACTED",
+    "sampleType": "DNA",
+    "recipe": "WholeExomeSequencing"
+  },
+  "qcReports": [
+    {
+      "qcReportType": "DNA",
+      "comments": "",
+      "investigatorDecision": "Continue processing",
+      "IGORecommendation": "Passed"
+    },
+    {
+      "qcReportType": "LIBRARY",
+      "comments": "",
+      "investigatorDecision": "Already moved forward by IGO",
+      "IGORecommendation": "Passed"
+    }
+  ],
+  "libraries": [
+    {
+      "barcodeId": null,
+      "barcodeIndex": null,
+      "libraryIgoId": "05791_AQ_4_1_1_1_1",
+      "libraryVolume": null,
+      "libraryConcentrationNgul": 5.780233233302096,
+      "dnaInputNg": null,
+      "captureConcentrationNm": null,
+      "captureInputNg": null,
+      "captureName": null,
+      "runs": [
+        {
+          "runMode": "NovaSeq S4",
+          "runId": "RUTH_0177",
+          "flowCellId": "HH5JLDSX5",
+          "readLength": "101/8/8/101",
+          "runDate": "2022-12-22",
+          "flowCellLanes": [
+            1
+          ],
+          "fastqs": [
+            "/igo/delivery/FASTQ/RUTH_0177_AHH5JLDSX5/Project_05791_AQ/Sample_TIL-JE-04_N2_IGO_05791_AQ_4/TIL-JE-04_N2_IGO_05791_AQ_4_S43_L001_R1_001.fastq.gz",
+            "/igo/delivery/FASTQ/RUTH_0177_AHH5JLDSX5/Project_05791_AQ/Sample_TIL-JE-04_N2_IGO_05791_AQ_4/TIL-JE-04_N2_IGO_05791_AQ_4_S43_L001_R2_001.fastq.gz"
+          ]
+        },
+        {
+          "runMode": "NovaSeq S4",
+          "runId": "RUTH_0175",
+          "flowCellId": "HJ3FWDSX5",
+          "readLength": "101/8/8/101",
+          "runDate": "2022-12-15",
+          "flowCellLanes": [
+            2
+          ],
+          "fastqs": [
+            "/igo/delivery/FASTQ/RUTH_0175_AHJ3FWDSX5/Project_05791_AQ/Sample_TIL-JE-04_N2_IGO_05791_AQ_4/TIL-JE-04_N2_IGO_05791_AQ_4_S77_L002_R1_001.fastq.gz",
+            "/igo/delivery/FASTQ/RUTH_0175_AHJ3FWDSX5/Project_05791_AQ/Sample_TIL-JE-04_N2_IGO_05791_AQ_4/TIL-JE-04_N2_IGO_05791_AQ_4_S77_L002_R2_001.fastq.gz"
+          ]
+        }
+      ]
+    }
+  ],
+  "sampleAliases": [
+    {
+      "value": "05791_AQ_4",
+      "namespace": "igoId"
+    },
+    {
+      "value": "TIL-JE-04_N2",
+      "namespace": "investigatorId"
+    }
+  ],
+  "patientAliases": [
+    {
+      "value": "P-0047338",
+      "namespace": "dmpId"
+    },
+    {
+      "value": "C-CJKRKM",
+      "namespace": "cmoId"
+    }
+  ],
+  "additionalProperties": {
+    "igoRequestId": "05791_AQ"
+  }
+}

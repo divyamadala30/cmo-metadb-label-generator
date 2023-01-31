@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -246,6 +247,30 @@ public class CmoLabelGeneratorServiceTest {
         Assert.assertEquals(sampleExpectedLabel, sampleUpdatedNaExtractLabel);
         Assert.assertFalse(cmoLabelGeneratorService.igoSampleRequiresLabelUpdate(
                 sampleUpdatedNaExtractLabel, sampleExpectedLabel));
+    }
+    
+    @Test
+    public void testDuplicateCmoSampleLabel() throws JsonMappingException, JsonProcessingException {
+        MockJsonTestData sampleDataA = mockedRequestJsonDataMap
+                .get("mockSampleWithDuplicateCmoSampleNameNewSample");
+        MockJsonTestData sampleDataB = mockedRequestJsonDataMap
+                .get("mockSampleWithDuplicateCmoSampleNameExistingSample");
+        MockJsonTestData responseSampleList = mockedRequestJsonDataMap
+                .get("mockSampleListFromPatientResponse");
+        
+        Map<String, String> mappedSampleListJson = mapper.readValue(
+                responseSampleList.getJsonString(), Map.class);
+        SampleMetadata[] existingSamples = mapper.convertValue(mappedSampleListJson.get("samples"),
+                SampleMetadata[].class);
+        SampleMetadata sampleA = mapper.readValue(sampleDataA.getJsonString(), SampleMetadata.class);
+        SampleMetadata sampleB = mapper.readValue(sampleDataB.getJsonString(), SampleMetadata.class);
+        
+        String cmoSampleLabelA =  cmoLabelGeneratorService.generateCmoSampleLabel(
+                sampleA, Arrays.asList(existingSamples));
+        String cmoSampleLabelB =  cmoLabelGeneratorService.generateCmoSampleLabel(
+                sampleB, Arrays.asList(existingSamples));
+        
+        Assert.assertNotSame(cmoSampleLabelA, cmoSampleLabelB);
     }
 
     private IgoSampleManifest getSampleMetadata(String igoId, String cmoPatientId,
